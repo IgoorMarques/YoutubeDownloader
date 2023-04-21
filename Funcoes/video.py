@@ -13,8 +13,7 @@ class tratar_video(QtCore.QThread):
         except:
             return False
         else:
-            self.title = self.video.title
-            return self.video, self.title, self.video.thumbnail_url
+            return self.video
 
     def baixarmp4(self, video):
         video.streams.get_by_itag(22).download('./Downloads/Mp4')
@@ -33,4 +32,3 @@ class tratar_video(QtCore.QThread):
         self.pct_completed = int(self.bytes_downloaded / self.total_size * 100)
         self.valor_baixado.emit(self.pct_completed)
         print(f"Status: {round(self.pct_completed, 2)} %")
-
