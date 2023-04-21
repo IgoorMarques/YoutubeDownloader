@@ -1,0 +1,136 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.setEnabled(True)
+        MainWindow.resize(760, 667)
+        MainWindow.setStyleSheet("background-image: url(:/background/background.jpg);")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.lb_link_video = QtWidgets.QLabel(self.centralwidget)
+        self.lb_link_video.setGeometry(QtCore.QRect(40, 20, 101, 21))
+        self.lb_link_video.setStyleSheet("font: 8pt \"Arial\";\n"
+"color: rgb(255, 255, 255);")
+        self.lb_link_video.setObjectName("lb_link_video")
+        self.txt_link_video = QtWidgets.QLineEdit(self.centralwidget)
+        self.txt_link_video.setGeometry(QtCore.QRect(160, 20, 471, 21))
+        self.txt_link_video.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 8pt \"Yu Gothic UI\";\n"
+"font: 12pt \"MS Shell Dlg 2\";")
+        self.txt_link_video.setText("")
+        self.txt_link_video.setObjectName("txt_link_video")
+        self.bt_pesquisar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_pesquisar.setGeometry(QtCore.QRect(640, 20, 41, 21))
+        self.bt_pesquisar.setStyleSheet("background-image: url(:/imgLupa/lupa.png);")
+        self.bt_pesquisar.setText("")
+        self.bt_pesquisar.setObjectName("bt_pesquisar")
+        self.lb_img_central = QtWidgets.QLabel(self.centralwidget)
+        self.lb_img_central.setGeometry(QtCore.QRect(120, 100, 531, 301))
+        self.lb_img_central.setStyleSheet("background-image: url(:/imgVazio/img_padrao.jpg);")
+        self.lb_img_central.setText("")
+        self.lb_img_central.setObjectName("lb_img_central")
+        self.lb_title_video = QtWidgets.QLabel(self.centralwidget)
+        self.lb_title_video.setGeometry(QtCore.QRect(40, 50, 111, 21))
+        self.lb_title_video.setStyleSheet("font: 8pt \"Arial\";\n"
+"color: rgb(255, 255, 255);")
+        self.lb_title_video.setObjectName("lb_title_video")
+        self.bt_renomear = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_renomear.setEnabled(False)
+        self.bt_renomear.setGeometry(QtCore.QRect(640, 50, 71, 23))
+        self.bt_renomear.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 8pt \"Arial\";")
+        self.bt_renomear.setAutoDefault(False)
+        self.bt_renomear.setObjectName("bt_renomear")
+        self.txt_title_video = QtWidgets.QLineEdit(self.centralwidget)
+        self.txt_title_video.setEnabled(False)
+        self.txt_title_video.setGeometry(QtCore.QRect(160, 50, 471, 21))
+        self.txt_title_video.setFrame(True)
+        self.txt_title_video.setObjectName("txt_title_video")
+        self.horizontalWidget = QtWidgets.QWidget(self.centralwidget)
+        self.horizontalWidget.setGeometry(QtCore.QRect(240, 570, 141, 51))
+        self.horizontalWidget.setObjectName("horizontalWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalWidget)
+        self.horizontalLayout.setContentsMargins(10, 0, 10, 1)
+        self.horizontalLayout.setSpacing(20)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.opcao_mp3 = QtWidgets.QRadioButton(self.horizontalWidget)
+        self.opcao_mp3.setTabletTracking(False)
+        self.opcao_mp3.setStyleSheet("color: rgb(255, 255, 255);")
+        self.opcao_mp3.setChecked(True)
+        self.opcao_mp3.setObjectName("opcao_mp3")
+        self.horizontalLayout.addWidget(self.opcao_mp3)
+        self.opcao_mp4 = QtWidgets.QRadioButton(self.horizontalWidget)
+        self.opcao_mp4.setStyleSheet("color: rgb(255, 255, 255);")
+        self.opcao_mp4.setObjectName("opcao_mp4")
+        self.horizontalLayout.addWidget(self.opcao_mp4)
+        self.lb_choose_format = QtWidgets.QLabel(self.centralwidget)
+        self.lb_choose_format.setGeometry(QtCore.QRect(240, 510, 251, 20))
+        self.lb_choose_format.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 8pt \"Arial\";")
+        self.lb_choose_format.setObjectName("lb_choose_format")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(390, 570, 110, 51))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.bt_baixar = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.bt_baixar.setStyleSheet("color: rgb(255, 255, 255);")
+        self.bt_baixar.setObjectName("bt_baixar")
+        self.bt_baixar.setEnabled(False)
+        self.verticalLayout.addWidget(self.bt_baixar)
+        self.bt_ver_downloads = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.bt_ver_downloads.setStyleSheet("color: rgb(255, 255, 255);")
+        self.bt_ver_downloads.setObjectName("bt_ver_downloads")
+        self.verticalLayout.addWidget(self.bt_ver_downloads)
+        self.barra_progresso = QtWidgets.QProgressBar(self.centralwidget)
+        self.barra_progresso.setGeometry(QtCore.QRect(190, 540, 391, 23))
+        self.barra_progresso.setStyleSheet("color: rgb(0, 255, 0);")
+        self.barra_progresso.setProperty("value", 0)
+        self.barra_progresso.setTextVisible(True)
+        self.barra_progresso.setObjectName("barra_progresso")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 760, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.lb_link_video.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Link vídeo: </span></p></body></html>"))
+        self.lb_title_video.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Título vídeo:</span></p></body></html>"))
+        self.bt_renomear.setText(_translate("MainWindow", "Renomear"))
+        self.txt_title_video.setText(_translate("MainWindow", "aguardando..."))
+        self.opcao_mp3.setText(_translate("MainWindow", "mp3"))
+        self.opcao_mp4.setText(_translate("MainWindow", "mp4"))
+        self.lb_choose_format.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">Escolha o formato desejado para o arquivo:</span></p></body></html>"))
+        self.bt_baixar.setText(_translate("MainWindow", "Baixar"))
+        self.bt_ver_downloads.setText(_translate("MainWindow", "Downloads"))
+        self.barra_progresso.setToolTip(_translate("MainWindow", "<html><head/><body><p>ggf</p></body></html>"))
+        self.barra_progresso.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>ggrr</p></body></html>"))
+
+from imagens import background, imgLupa, imgVazio
+
+
+
+
+
+
+"""if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+"""

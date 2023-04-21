@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="imgVazio">
+    <file>img_padrao.jpg</file>
+  </qresource>
+</RCC>
