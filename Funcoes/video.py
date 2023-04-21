@@ -11,7 +11,7 @@ class tratar_video(QtCore.QThread):
         try:
             self.video = yt(link, on_progress_callback=self.on_progress)
         except:
-            return 'Link inválido'
+            return False
         else:
             self.title = self.video.title
             return self.video, self.title, self.video.thumbnail_url
@@ -33,5 +33,4 @@ class tratar_video(QtCore.QThread):
         self.pct_completed = int(self.bytes_downloaded / self.total_size * 100)
         self.valor_baixado.emit(self.pct_completed)
         print(f"Status: {round(self.pct_completed, 2)} %")
-
 

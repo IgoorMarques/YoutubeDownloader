@@ -1,3 +1,4 @@
+import colorsys
 import os
 from PyQt5 import QtGui, QtWidgets
 from ui_mainwindow import Ui_MainWindow
@@ -26,15 +27,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def pesquisar_link(self):
         self.barra_progresso.setValue(0)
-        self.lb_choose_format.setText(' Escolha o formato desejado para o arquivo: ')
         if len(self.txt_link_video.text()) > 5:
-            self.achar_video = self.task.buscar(self.txt_link_video.text())
-            if self.achar_video != 'Link inválido':
+            self.lb_choose_format.setText(' Escolha o formato desejado para o arquivo: ')
+            self.link = self.txt_link_video.text()
+            self.achar_video = self.task.buscar(self.link)
+            if self.achar_video:
                 self.txt_title_video.setText(self.achar_video[1])
                 self.bt_renomear.setEnabled(True)
                 self.task.imgVideo(self.achar_video[2])
                 self.atualizarImgCentral()
                 self.bt_baixar.setEnabled(True)
+            else:
+                self.txt_link_video.setText("Link inválido")
+        elif self.txt_link_video.text() == "":
+            self.txt_link_video.setText("Informe um link")
+        else:
+            self.txt_link_video.setText("Link inválido")
 
     def renomear(self):
         self.txt_title_video.setEnabled(True)
